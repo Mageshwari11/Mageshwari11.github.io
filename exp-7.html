@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exp-7</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="exp7.css" type="text/css">
+    <link rel="stylesheet" href="exp7.css" type="text/css"/>
+
+
+</head>
+<body>
+    <div id="container">
+        <div id="cont1">
+            <h1>Hi There !</h1>
+        </div>
+        <div align="center" id="cont2">
+            <input type="button" value="Show" id="show">
+            <input type="button" value="Hide" id="hide">
+            <input type="button" value="Toggle" id="Toggle">
+            <input type="button" value="Fade in" id="fadeI">
+            <input type="button" value="Fade out" id="fadeO">
+            <input type="button" value="Fade Toggle" id="fadeT">
+            <input type="button" value="Slide Up" id="slideU">
+            <input type="button" value="Slide Down" id="slideD">
+            <input type="button" value="Slide Toggle" id="slideT">
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#show").click(function(){
+                    $("#cont1").show();
+                });
+                $("#hide").click(function(){
+                    $("#cont1").hide();
+                });
+                $("#Toggle").click(function () {
+                    $("#cont1").toggle(100);
+                });
+                $("#fadeI").click(function () {
+                    $("#cont1").fadeIn(500);
+                });
+                $("#fadeO").click(function () {
+                    $("#cont1").fadeOut(500);
+                });
+                $("#fadeT").click(function () {
+                    $("#cont1").fadeToggle(500);
+                });
+                $("#slideU").click(function () {
+                    $("#cont1").slideUp(100);
+                });
+                $("#slideD").click(function () {
+                    $("#cont1").slideDown(100);
+                });
+                $("#slideT").click(function () {
+                    $("#cont1").slideToggle(100);
+                });
+            });
+        </script>
+    </div>
+
+    <div id="anim">
+        <h1>Animation</h1>
+        <img id="car" src="download.png">
+        <div id="cont3">
+            <input type="button" value="start" id="startAnim">
+            <input type="button" value="stop" id="stopAnim">
+            <input type="button" value="reset" id="resetAnim">
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#startAnim").click(function () {
+                    $("#car").animate({left: '84%'},3000);
+                });
+                $("#stopAnim").click(function () {
+                    $("#car").stop();
+                });
+                $("#resetAnim").click(function () {
+                    $("#car").removeAttr('style');
+                });
+            });
+        </script>
+    </div>
+
+    <div id="ex1" class="modal">
+        <p>Thanks for clicking.<br>This is the sample model created using Jquery.</p>
+    </div>
+    <div id="mod">
+        <a href="#ex1" rel="modal:open"><button id="model-button">Jquery Model</button></a>
+    </div>
+
+</body>
+</html>
+
