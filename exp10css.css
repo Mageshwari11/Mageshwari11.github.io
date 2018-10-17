@@ -1,0 +1,31 @@
+University{
+    display: block;
+    background-color: lightcoral;
+    display: block;
+}
+Employee{
+    display: block;
+    padding: 10px;
+    background-color:tan;
+    margin: 10px;
+    padding: 10px;
+    
+}
+FirstName,LastName{
+    display: inline-block;
+    font-style: bold;
+    font-size: 25px;
+    color: brown;
+    
+}
+EmpId,Gender,PhoneNo,Email,Address,Designation,Department,Salary{
+    display: block;
+    color: whitesmoke;
+}
+
+
+
+Employee[id=p1],Employee[id=p3],Employee[id=p5],Employee[id=p7],Employee[id=p9]{
+    display: block;
+    background-color: grey;
+}
