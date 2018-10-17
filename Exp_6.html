@@ -1,0 +1,205 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function pro() {
+                var count=1; var countv=0; var countc=0, counts=0;
+                var s=document.getElementById("tb").value;
+                
+
+                for( var i=0;i<s.length;i++){
+                    if(s[i]===" "){
+                        count++; 
+                    }
+                    if(s[i]==='a' ||s[i]==='e' ||s[i]==='i' ||s[i]==='o' ||s[i]==='u'){
+                        countv++;
+                    }
+                    else{
+                        countc++;
+                    }                   
+                }
+                counts=parseInt(count)-1;
+                document.getElementById("res").innerHTML="<br><br><br>Number of characters: "+s.length+"<br>Number of words: "+count+
+                        "<br>Number of vowels: "+countv+"<br>Number of consonants: "+countc+"<br>Number of spaces: "+counts;
+            }
+            
+            function bk(){
+                var d1=document.getElementById("bores");
+                var a= document.getElementById("bc").value;
+                d1.style.backgroundColor=a;
+            }
+            function text(){
+                var d2=document.getElementById("bores");
+                var b= document.getElementById("tc").value;
+                d2.style.color=b;
+            }
+            function texts(){
+                
+                var d3=document.getElementById("bores");
+                var c= document.getElementById("ts").value;
+                
+                d3.style.fontSize=c+'px';
+            }
+            
+            function wid(){
+                var d4=document.getElementById("bores");
+                var d= document.getElementById("w").value;
+                d4.style.width=d+'px';
+            }
+            function ht(){
+                var d5=document.getElementById("bores");
+                var e= document.getElementById("h").value;
+                d5.style.height=e+'px';
+            }
+            function opac(){
+                var d6=document.getElementById("bores");
+                var o= document.getElementById("op").value;
+                d6.style.opacity=o;
+            }
+            function Garden(){
+                var u= document.getElementById("r").value;
+                var v= document.getElementById("c").value;
+                var img = document.createElement("IMG");
+                img.height = "100";
+                img.width = "100";
+                document.getElementById("foo").innerHTML+=" ";
+                for( var i=0; i<u;i++){
+                    document.getElementById("foo").innerHTML+="<br>";
+                    for( var j=0; j<v; j++){
+                        if(i%2==0){
+                            
+                            document.getElementById("foo").innerHTML+=" ";
+                            img.src = "1.jpg";
+                            document.getElementById("foo").appendChild(img);   
+                        }    
+                        else{
+                           document.getElementById("foo").innerHTML+=" ";
+                           img.src = "2.jpeg";
+                          
+                           document.getElementById("foo").appendChild(img);
+                        }
+                    }
+                }
+            }
+            var image, animate;
+
+
+
+            function init()
+            {
+                image=document.getElementById("bore");
+                image.style.position='relative';
+                image.style.left= '0px';
+            }
+
+            function start()
+            {
+                image.style.left=parseInt(image.style.left)+10+'px';
+                animate= setTimeout(start, 50);
+            }
+
+            function stop()
+            {
+                clearTimeout(animate);
+                image.style.left='0px';
+
+            }
+            window.onload=init;
+              
+        </script>
+        <style>
+            #big{
+                width:50%;
+                height:400px;
+                background-color: lightgrey;
+            }
+            #tb{
+                border: 1px darkblue solid;
+                margin:10px;
+            }
+            #res{
+                color:greenyellow;
+            }
+            #b1{
+                margin-left: 120px;
+                height: 30px;
+                width:200px;
+                background-color: darkblue;
+                padding: 5px;
+                color:white;
+            }
+            #bores,#bore{
+                height: 100px;
+                width: 100px;
+                border: 1px black solid;
+                background-color: yellow;
+                font-size: 15px;
+                position:relative;
+                left: 0px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="big">
+            <h1 align="center" style="color: darkblue; font-size: 50px">Text Processing</h1>
+            &nbsp;&nbsp;&nbsp;Enter the message<br><textarea id="tb" rows="4" cols="60"></textarea>
+            <input type="button" value="Calculate" id="b1" onClick="pro()">
+            <div id="res"></div>
+        </div>
+        <br><br><br>
+        
+        <div id="big">
+            <div id="bores">JAVA</div>
+            <br><br>
+            <form>Change Background Color: <input type="color" id="bc" onchange="bk()">
+            <br><br>
+            Change Text Color: <input type="color" id="tc" onchange="text()">
+            <br><br>
+            Change Text Size: 
+            <select id="ts" onchange="texts()">
+                <option>22</option>
+                <option>24</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+            </select>
+            <br><br>
+            Change Width: <input type="number" id="w" onchange="wid()">
+            <br><br>
+            Change Height: <input type="number" id="h" onchange="ht()">
+            <br><br>
+            Change Opacity: <input type="range" min="0" max="1" id="op" onchange="opac()">
+            </form>
+        </div>
+        <br><br><br>
+        
+        <div id="big">
+            <form>
+                <br><br>
+                Rows: <input type="number" id="r">
+                Columns: <input type="number" id="c">
+                <br><input type="button" value="Plant Garden" onclick="Garden()">
+            </form>
+            <div id="foo"></div>
+        </div>
+        <br><br><br>
+        
+        <div id="big">
+            <div id="bore"></div>
+            <form>
+                <br><br><br>
+                <input type="button" id="b" value="move" onclick="start()">
+                <input type="button" id="b" value="stop" onclick="stop()">
+            </form>
+        </div>
+    </body>
+</html>                      
+	
+
+	
+	
+            19-07-2018		
+		
